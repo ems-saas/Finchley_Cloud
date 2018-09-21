@@ -1,0 +1,32 @@
+spring :
+  rabbitmq:
+    host: 47.104.167.103
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          username: lindd@tiansu-china.com
+          password: 3er4#ER$
+          uri: https://github.com/ems-saas/app.git
+          basedir: c:\localgit
+      label: master
+    inetutils:
+      timeout-seconds: 10
+server:
+  port: 9000
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/ #注册中心地址
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+

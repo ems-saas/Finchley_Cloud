@@ -1,0 +1,18 @@
+spring :
+  application:
+    name: eureka
+  cloud:
+    inetutils:
+      timeout-seconds: 10
+server:
+  port: 8761
+
+eureka:
+  client:
+    registerWithEureka: false  #不要向注册中心注册自己
+    fetchRegistry: false  #不去检索其他服务，因为服务注册中心本身的职责就是维护服务实例，它也不需要去检索其他服务
+    serviceUrl:
+      defaultZone: http://127.0.0.1:${server.port}/eureka/ #注册中心地址
+  instance:
+    ip-address: 127.0.0.1
+    prefer-ip-address: true
